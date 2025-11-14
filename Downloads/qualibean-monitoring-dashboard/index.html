@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QualiBean Monitoring Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      @keyframes flow-pass {
+        0% { opacity: 1; transform: translate(-50%, 0); }
+        40% { top: 40%; opacity: 1; transform: translate(-50%, 0); } /* Arrive at scanner */
+        50% { top: 40%; opacity: 1; transform: translate(-50%, 0); } /* Pause at scanner */
+        90% { top: 85%; left: 25%; opacity: 1; transform: translate(-50%, 0); } /* Move to pass bin */
+        100% { top: 85%; left: 25%; opacity: 0; transform: translate(-50%, 0); } /* Fade out */
+      }
+      @keyframes flow-fail {
+        0% { opacity: 1; transform: translate(-50%, 0); }
+        40% { top: 40%; opacity: 1; transform: translate(-50%, 0); } /* Arrive at scanner */
+        50% { top: 40%; opacity: 1; transform: translate(-50%, 0); } /* Pause at scanner */
+        90% { top: 85%; left: 75%; opacity: 1; transform: translate(-50%, 0); } /* Move to fail bin */
+        100% { top: 85%; left: 75%; opacity: 0; transform: translate(-50%, 0); } /* Fade out */
+      }
+      .animate-flow-pass {
+        animation: flow-pass 2.5s ease-in-out forwards;
+      }
+      .animate-flow-fail {
+        animation: flow-fail 2.5s ease-in-out forwards;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: '#6F4E37', // Coffee
+              secondary: '#E5A743', // Amber
+              success: '#4CAF50',
+              error: '#D32F2F',
+              background: '#FDFCF9',
+              surface: '#FFFFFF',
+              'text-primary': '#38220F', // Dark Brown
+              'text-secondary': '#8D6E63', // Lighter Brown
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-background">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

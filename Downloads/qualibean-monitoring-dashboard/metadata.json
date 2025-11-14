@@ -1,0 +1,5 @@
+{
+  "name": "QualiBean Monitoring Dashboard",
+  "description": "A web interface for operators and administrators to monitor, control, and analyze the QualiBean coffee bean quality control system in real-time. It features role-based access, live data visualization, analytics, and data export functionalities.",
+  "requestFramePermissions": []
+}
